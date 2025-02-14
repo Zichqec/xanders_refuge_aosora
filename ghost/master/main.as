@@ -10,14 +10,16 @@ function OnAosoraDefaultSaveData
 	Save.Data.KnowAion = 0;
 	Save.Data.KnowSajun = 0;
 	Save.Data.KnowMalous = 0;
+	Save.Data.LastTalk = "";
 }
 
 //SHIORIロード後
 function OnAosoraLoad
 {
 	//ランダムトークの設定
-	TalkTimer.RandomTalk = Reflection.Get("RandomTalk");
+	TalkTimer.RandomTalk = OnAiTalk();
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
+	Save.Data.LastTalk = "";
 }
 
 //喋り間隔の設定

@@ -1,6 +1,5 @@
 function smoke(surface)
 {
-	//I think this probably....... isn't correct lol. TODO find out how to check for an empty variable
 	if (surface.IsNull())
 	{
 		surface = 0;

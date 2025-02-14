@@ -1,3 +1,11 @@
+function OnAiTalk
+{
+	Save.Data.LastTalk = ""; //TODO i want this to be a global variable but not save... is that possible?
+	
+	Save.Data.LastTalk = RandomTalk();
+	return Save.Data.LastTalk;
+}
+
 talk RandomTalk
 {
 	\0\s[213]"@Xaeyar, bring us luck!"\w8\w8 "@Xaeyar, why did you let this happen to us!"\w8\w8{smoke(2)}\s[213]
@@ -632,4 +640,3 @@ talk RandomTalk
 {
 	\0\s[222]Mortal teachings on @Aion in particular are always egregiously bad. \s[11]Mortals often make them out to be our equal, but that is sadly not at all true.
 }
-	

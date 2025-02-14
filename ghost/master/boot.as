@@ -4,12 +4,9 @@ talk OnFirstBoot
 	
 	{smoke}\s[213]\w8\w8\w8\s[200]Is there a reason you're bothering me? 
 	
-	
 	\s[211]... \w8\w8\w8\s[220]Nah, forget it. The look on your face says enough. 
 	
-	
 	\s[111]Well, listen. I'm feeling generous. \s[100]You can hang out with the great Xaeyar on one condition: \w8\s[230]not a word to anyone that I'm here. 
-	
 	
 	\s[0]I won't tell anyone you're hiding, you{br}won't tell anyone I'm hiding. \s[111]Fair?
 

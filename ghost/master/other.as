@@ -65,10 +65,11 @@ function OnKeyPress
 	else if (Shiori.Reference[0] == "t")
 	{
 		//TODO ask about \a not calling randomtalk...
-		return "\a"; //TODO this isn't how i want to do it but it will work
+		return OnAiTalk(); //TODO this isn't how i want to do it but it will work
 	}
 	else if (Shiori.Reference[0] == "r")
 	{
+		return OnLastTalk();
 		//TODO i have no idea here...
 	}
 }
@@ -151,11 +152,35 @@ function ghostver
 }
 
 //—————————————————————————————— Right click menu links ——————————————————————————————
+function FormatLinks(links)
+{
+	local output = "";
+	for (i = 0; i < links.length; i++)
+	{
+		output += links[i];
+		//Alternate between adding  or 
+		if (i % 2 == 1)
+		{
+			output += "";
+		}
+		else
+		{
+			output += "";
+		}
+	}
+	return output;
+}
 
-//TODO FormatLinks
-//TODO ask about how to add the ASC stuff...
+//TODO can't get this to show up no matter what I do. possible bug? Also find out if there's a better way to type these characters
+function OnTestLinks
+{
+	return FormatLinks(recommendsites_sakura());
+}
 
-//TODO On_sakura.recommendsites
+function sakura@recommendsites
+{
+	return FormatLinks(recommendsites_sakura());
+}
 
 function recommendsites_sakura
 {

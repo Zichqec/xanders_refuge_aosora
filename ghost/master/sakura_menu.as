@@ -81,8 +81,11 @@ function OnSakuraMenu(initial)
 	
 	output += "\n\n\n\![quicksection,true]\![no-autopause]";
 	
-	output += "\![*]\q[Talk to me,RandomTalk]";
-	//TODO idk how to add a repeat option here... hm!
+	output += "\![*]\q[Talk to me,OnAiTalk]";
+	if (!Save.Data.LastTalk == "")
+	{
+		output += "  \![*]\q[Say that again,OnLastTalk]";
+	}
 	
 	output += "\n";
 	
@@ -124,6 +127,11 @@ function OnSakuraMenu(initial)
 	
 	return output;
 	
+}
+
+function OnLastTalk
+{
+	return Save.Data.LastTalk;
 }
 
 function StoryQuestion
