@@ -1,0 +1,60 @@
+charset,UTF-8
+version,1
+option,DisableNoDefineSurfaces
+
+group,Default
+{
+	scope,0
+	
+	0,Neutral
+	11,@ user
+	12,Inhale
+	13,Sigh
+	14,Exhale
+	
+	20,Annoyed
+	21,@ user
+	22,Wistful
+	
+	30,Mild
+	31,Confused
+}
+
+group,Gesture
+{
+	scope,0
+	
+	100,Neutral
+	111,@ user
+	113,Sigh
+	114,Exhale
+	
+	120,Annoyed
+	121,@ user
+	122,Wistful
+	
+	130,Mild
+	131,Confused
+}
+
+group,Crossed
+{
+	scope,0
+	
+	200,Neutral
+	211,@ user
+	213,Sigh
+	214,Exhale
+	
+	220,Annoyed
+	221,@ user
+	222,Wistful
+	
+	230,Mild
+	231,Confused
+}
+
+group,__disabled
+{
+	10,__parts
+}

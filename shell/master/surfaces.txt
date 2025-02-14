@@ -1,0 +1,230 @@
+descript
+{
+	version,1
+	//satolist.palette.frame,150,150
+}
+
+//Blinks
+surface.append0,100,200
+{	
+	animation0.interval,random,4
+	animation0.pattern1,overlay,900,0,0,0
+	animation0.pattern2,overlay,901,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+
+surface.append11,111,211
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,900,0,0,0
+	animation0.pattern2,overlay,902,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+
+surface.append20,120,220
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,910,0,0,0
+	animation0.pattern2,overlay,911,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+surface.append21,121,221
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,910,0,0,0
+	animation0.pattern2,overlay,912,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+surface.append22,122,222
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,910,0,0,0
+	animation0.pattern2,overlay,911,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+
+surface.append30,130,230
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,920,0,0,0
+	animation0.pattern2,overlay,921,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+surface.append31,131,231
+{
+	animation0.interval,random,4
+	animation0.pattern1,overlay,920,0,0,0
+	animation0.pattern2,overlay,921,100,0,0
+	animation0.pattern3,overlay,-1,50,0,0
+	animation0.option,shared-index
+}
+
+//Continuous smoke
+surface.append0,11-31,!12
+{
+	animation1000.interval,always
+	animation1000.pattern0,overlay,1000,0,0,0
+	animation1000.pattern1,overlay,1001,150,0,0
+	animation1000.pattern2,overlay,1002,150,0,0
+	animation1000.pattern3,overlay,1003,150,0,0
+	animation1000.pattern4,overlay,1004,150,0,0
+	animation1000.pattern5,overlay,1005,150,0,0
+	animation1000.pattern6,overlay,1006,150,0,0
+	animation1000.pattern7,overlay,1007,150,0,0
+	animation1000.pattern8,overlay,1007,150,0,0
+	animation1000.option,shared-index
+}
+
+surface.append100-131
+{
+	animation1000.interval,always
+	animation1000.pattern0,overlay,1100,0,0,0
+	animation1000.pattern1,overlay,1101,150,0,0
+	animation1000.pattern2,overlay,1102,150,0,0
+	animation1000.pattern3,overlay,1103,150,0,0
+	animation1000.pattern4,overlay,1104,150,0,0
+	animation1000.pattern5,overlay,1105,150,0,0
+	animation1000.pattern6,overlay,1106,150,0,0
+	animation1000.pattern7,overlay,1107,150,0,0
+	animation1000.pattern8,overlay,1107,150,0,0
+	animation1000.option,shared-index+background
+}
+
+surface.append200-231
+{
+	animation1000.interval,always
+	animation1000.pattern0,overlay,1200,0,0,0
+	animation1000.pattern1,overlay,1201,150,0,0
+	animation1000.pattern2,overlay,1202,150,0,0
+	animation1000.pattern3,overlay,1203,150,0,0
+	animation1000.pattern4,overlay,1204,150,0,0
+	animation1000.pattern5,overlay,1205,150,0,0
+	animation1000.pattern6,overlay,1206,150,0,0
+	animation1000.pattern7,overlay,1207,150,0,0
+	animation1000.pattern8,overlay,1207,150,0,0
+	animation1000.option,shared-index
+}
+
+//Exhale
+surface.append14,114,214
+{
+	animation50.interval,runonce
+	animation50.pattern0,overlay,2000,0,0,0
+	animation50.pattern1,overlay,2001,150,0,0
+	animation50.pattern2,overlay,2002,150,0,0
+	animation50.pattern3,overlay,2003,150,0,0
+	animation50.pattern4,overlay,2004,150,0,0
+	animation50.pattern5,overlay,2005,150,0,0
+	animation50.pattern6,overlay,2006,150,0,0
+	animation50.pattern7,start,51,0,0,0
+	animation50.pattern8,overlay,2007,150,0,0
+	animation50.pattern9,overlay,2008,150,0,0
+	animation50.pattern10,overlay,2009,150,0,0
+	animation50.pattern11,overlay,2010,150,0,0
+	animation50.pattern12,overlay,2011,150,0,0
+	animation50.pattern13,overlay,-1,150,0,0
+}
+
+
+//Animations for when he closes his mouth during the exhale
+surface14
+{
+	animation51.interval,never
+	animation51.pattern0,overlay,13,0,0,0
+}
+
+surface114
+{
+	animation51.interval,never
+	animation51.pattern0,overlay,113,0,0,0
+}
+
+surface214
+{
+	animation51.interval,never
+	animation51.pattern0,overlay,213,0,0,0
+}
+
+//Talk frames
+surface.append0,11-14,100,111-113,!112,200,211-214
+{
+	animation1.interval,talk,5
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,800,0,0,0
+	animation2.pattern1,overlay,801,90,0,0
+	animation2.pattern2,overlay,-1,90,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,801,0,0,0
+	animation3.pattern1,overlay,802,90,0,0
+	animation3.pattern2,overlay,-1,90,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,802,0,0,0
+	animation4.pattern1,overlay,800,90,0,0
+	animation4.pattern2,overlay,-1,90,0,0
+}
+
+surface.append20-22,120-122,220-222
+{
+	animation1.interval,talk,5
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,810,0,0,0
+	animation2.pattern1,overlay,811,90,0,0
+	animation2.pattern2,overlay,-1,90,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,811,0,0,0
+	animation3.pattern1,overlay,812,90,0,0
+	animation3.pattern2,overlay,-1,90,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,812,0,0,0
+	animation4.pattern1,overlay,810,90,0,0
+	animation4.pattern2,overlay,-1,90,0,0
+}
+
+surface.append30-31,130-131,230-231
+{
+	animation1.interval,talk,5
+	animation1.pattern0,alternativestart,(2,3,4)
+	
+	animation2.interval,never
+	animation2.pattern0,overlay,820,0,0,0
+	animation2.pattern1,overlay,821,90,0,0
+	animation2.pattern2,overlay,-1,90,0,0
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,821,0,0,0
+	animation3.pattern1,overlay,822,90,0,0
+	animation3.pattern2,overlay,-1,90,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,822,0,0,0
+	animation4.pattern1,overlay,820,90,0,0
+	animation4.pattern2,overlay,-1,90,0,0
+}
+
+//Stops talk frames
+surface.append0-231,!10,!112
+{
+	animation10.interval,never
+	animation10.pattern0,stop,1
+}
+
+//Satolist settings
+surface.append0-9,11-240
+{
+//satolist.palette.offset,100,0
+//satolist.palette.expand,0.50
+}

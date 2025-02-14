@@ -1,0 +1,19 @@
+charset,UTF-8
+
+name,Xander's Refuge (Aosora port)
+type,ghost
+
+shiori,aosora.dll
+
+craftman,Zichqec
+craftmanw,Zichqec
+craftmanurl,https://ukagaka.zichqec.com/
+
+sakura.name,Xaeyar
+kero.name,-
+
+icon,smocon.ico
+
+sstp.allowunspecifiedsend,0
+
+balloon,Flip of a Coin

@@ -1,0 +1,2 @@
+ghost/master/savedata.asv,nonar,noupdate
+flip_of_a_coin_zi/,noupdate
