@@ -33,8 +33,6 @@ function OnTranslate
 
 function AutoPause(talkstr)
 {
-	//TODO ask about if IndexOf outputs nothing instead of -1 if it finds no matches
-	//if (talkstr.IndexOf("\![no-autopause]") < 0)
 	if (talkstr.IndexOf("\![no-autopause]").IsNull())
 	{
 		talkstr = talkstr.Replace(", ",",\w4 ");
@@ -58,20 +56,24 @@ function OnAnchorSelect
 
 function OnKeyPress
 {
+	local output = "";
+	if (BalloonIsOpen())
+	{
+		output += "\C";
+	}
 	if (Shiori.Reference[0] == "f1")
 	{
-		return "\![open,readme]";
+		output += "\![open,readme]";
 	}
 	else if (Shiori.Reference[0] == "t")
 	{
-		//TODO ask about \a not calling randomtalk...
-		return OnAiTalk(); //TODO this isn't how i want to do it but it will work
+		output += OnAiTalk();
 	}
 	else if (Shiori.Reference[0] == "r")
 	{
-		return OnLastTalk();
-		//TODO i have no idea here...
+		output += OnLastTalk();
 	}
+	return output;
 }
 
 function OnSurfaceRestore
@@ -114,7 +116,7 @@ function OnSurfaceRestore
 //TODO THIS IS TEMPORARY i just wanna see my boy move around a little
 function OnSecondChange
 {
-	if (Random.GetIndex(0,60) == 0)
+	if (Random.GetIndex(0,60) == 0 && !BalloonIsOpen())
 	{
 		return OnSurfaceRestore;
 	}
@@ -122,17 +124,17 @@ function OnSecondChange
 
 //TODO BalloonIsOpen
 //I am unsure how to work this without documentation...
-// function BalloonIsOpen
-// {
-	// if (Shiori["balloon"])
-	// {
-		// return 1;
-	// }
-	// else
-	// {
-		// return 0;
-	// }
-// }
+function BalloonIsOpen
+{
+	if (Shiori["choosing"])
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
 
 function OnWindowStateRestore
 {
@@ -161,17 +163,16 @@ function FormatLinks(links)
 		//Alternate between adding  or 
 		if (i % 2 == 1)
 		{
-			output += "";
+			output += (2).ToAscii(); //TODO test on a version of SSP that can open this link to see lol
 		}
 		else
 		{
-			output += "";
+			output += (1).ToAscii();
 		}
 	}
 	return output;
 }
 
-//TODO can't get this to show up no matter what I do. possible bug? Also find out if there's a better way to type these characters
 function OnTestLinks
 {
 	return FormatLinks(recommendsites_sakura());

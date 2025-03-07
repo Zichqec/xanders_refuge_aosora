@@ -72,8 +72,7 @@ function OnInstallFailure
 function OnNarCreated
 {
 	//Makes a clickable link that'll open the location of the file they just made
-	//TODO ask if there is a way to escape quotes... hghgh
-	local nar = "\_a[OnNarLocation," + '"' + Shiori.Reference[1] + '"' + "]{Shiori.Reference[0]}\_a";
+	local nar = `\_a[OnNarLocation,"{Shiori.Reference[1]}"]{Shiori.Reference[0]}\_a`;
 	
 	return "\0\i[10]Successfully created {nar}.";
 }
@@ -95,18 +94,21 @@ function OnUpdateBegin
 //reference0 is the number of new files, starting from 0
 function OnUpdateReady
 {
-	Shiori.Reference[0]++; //Number of files starts from 0, so this displays the correct amount
+	//Number of files starts from 0, so this displays the correct amount
+	local newfiles = Shiori.Reference[0];
+	newfiles.ToNumber();
+	newfiles += 1; //TODO i'm having an issue where this is coming out as a string and not a number??
 	
 	//plural checks, adds an s and changes is to are if there's more than 1 file
 	local s = "";
 	local are = "";
-	if (Shiori.Reference[0] != 1)
+	if (newfiles != 1)
 	{
 		s = "s";
 		are = "are";
 	}
 	
-	return "\0\i[10]There {are} {Shiori.Reference[0]} new file{s}.\w8";
+	return "\0\i[10]There {are} {newfiles} new file{s}.\w8";
 }
 
 //When the update finishes. Don't forget to initialize any new variables you've created! I highly highly recommend using OnInitialize for this (it's in boot.dic), in case the user updates via the ghost explorer or some other means.
@@ -126,6 +128,7 @@ function OnUpdateComplete
 function OnUpdateFailure
 {
 	//TODO idk how to do SPLITPATH here...
+	//Need to do a normal split but first i need to see what the file paths look like. i'm assuming a forward slash, but...
 	local badfile = ""; //For MD5 errors, this gets the name and extension of the offending file
 	local reason = Shiori.Reference[0];
 	
@@ -142,7 +145,7 @@ function OnUpdateFailure
 		reason = "canceled by user";
 	}
 	
-	return "\0\i[10]Could not update: {reason}.";
+	return "\0\i[10]Could not update: {reason}.\n\n{Shiori.Reference[1]}";
 }
 
 

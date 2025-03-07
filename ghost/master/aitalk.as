@@ -1,6 +1,6 @@
 function OnAiTalk
 {
-	Save.Data.LastTalk = ""; //TODO i want this to be a global variable but not save... is that possible?
+	Save.Data.LastTalk = "";
 	
 	Save.Data.LastTalk = RandomTalk();
 	return Save.Data.LastTalk;

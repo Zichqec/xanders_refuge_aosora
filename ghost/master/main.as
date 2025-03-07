@@ -50,7 +50,6 @@ function OnClose()
 }
 
 
-
 //—————————————————————————————— Recreated YAYA functions ——————————————————————————————
 //This is a ghost ported from YAYA... and it turns out that YAYA has a bunch of functions that make things easy for me that I didn't account for! So here's where I'm going to recreate those as needed...
 //Well, more or less recreate. I can't recreate the whole SHIORI3EV thing here because AFAIK I do not have access to EVAL (nor do I want it, honestly)

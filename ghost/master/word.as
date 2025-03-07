@@ -50,7 +50,6 @@ function closeshave
 
 function weirdinvention
 {
-	//TODO ask about escaping quotes...
 	return Random.Select([
 		'"anti finger-crumbs" bowl',
 		"windshield wiper for a watch",

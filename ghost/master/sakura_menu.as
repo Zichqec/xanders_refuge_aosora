@@ -52,11 +52,9 @@ function SakuraMenuGreetings
 
 function OnSakuraMenu(initial)
 {
-	//Ummmmmm........ TODO recreate the Eventid stuff?????? hm!
-	//oh god his menu greeting stuff doesn't work at all with this lollllll
-	//Going to try a workaround?? guess this could work on the YAYA version too... maybe that would be simpler for simplicity, hm
 	output = "";
 	
+	//Workaround for not having YAYA's eventid stuff
 	local isinitial = 0;
 	if (initial == "initial")
 	{
@@ -102,12 +100,11 @@ function OnSakuraMenu(initial)
 		
 		if (time.Split(",")[1] == Save.Data.TalkInterval)
 		{
-			//TODO ask for a better way to escape quotes lol
-			output += "\_a[OnChangeTalkrate,{time.Split(',')[1]}," + '"' + greet + '"' + "]{time.Split(',')[0]}\_a ";
+			output += `\_a[OnChangeTalkrate,{time.Split(',')[1]},"{greet}"]{time.Split(',')[0]}\_a `;
 		}
 		else
 		{
-			output += "\__q[OnChangeTalkrate,{time.Split(',')[1]}," + '"' + greet + '"' + "]{time.Split(',')[0]}\__q ";
+			output += `\__q[OnChangeTalkrate,{time.Split(',')[1]},"{greet}"]{time.Split(',')[0]}\__q `;
 		}
 	}
 	
@@ -186,9 +183,8 @@ function OnChangeTalkrate
 {
 	local interval = Shiori.Reference[0];
 	SetTalkInterval(interval);
-	//TODO again with the quotes lol
 	//I mostly copied this from the existing talk rate change function...
-	return "\C\![no-autopause]\![raise,OnSakuraMenu," + '"' + Shiori.Reference[1] + '"' + "]";
+	return `\C\![no-autopause]\![raise,OnSakuraMenu,"{Shiori.Reference[1]}"]`;
 }
 
 function OnMenuClose

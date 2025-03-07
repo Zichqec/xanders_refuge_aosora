@@ -21,8 +21,8 @@ function OnAskGods
 	
 	if (Save.Data.AskedGods == 1)
 	{
-		//TODO this is... very brittle. I'm trying to add \x after it and no matter how i do it it breaks. Don't want to do it script by script...
-		return Reflection.Get("OnAskGods_" + Shiori.Reference[0]);
+		//Note the () at the end there - with Reflection.Get you can only add a string like this when you've made Reflection.Get into a function call, I think...? My brain's a little muddled but this is how I was told I could do it. Can make it a little more verbose as well if this is confusing.
+		return Reflection.Get("OnAskGods_" + Shiori.Reference[0])() + "\x";
 	}
 	else //first time asking
 	{
@@ -237,10 +237,7 @@ function OnStory
 	}
 	else
 	{
-		//local ref = Shiori.Reference[0];
-		local talk_name = "OnStory@" + Shiori.Reference[0];
-		return Reflection.Get(talk_name);
-		//return OnStory@Locked() + "locked\x";
+		return Reflection.Get("OnStory@" + Shiori.Reference[0]);
 	}
 }
 
