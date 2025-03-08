@@ -33,7 +33,7 @@ function OnTranslate
 
 function AutoPause(talkstr)
 {
-	if (talkstr.IndexOf("\![no-autopause]").IsNull())
+	if (talkstr.IndexOf("\![no-autopause]").IsNull() && talkstr.IndexOf("■Aosora reload completed").IsNull())
 	{
 		talkstr = talkstr.Replace(", ",",\w4 ");
 		talkstr = talkstr.Replace(". ",".\w8\w8 ");
@@ -56,24 +56,18 @@ function OnAnchorSelect
 
 function OnKeyPress
 {
-	local output = "";
-	if (BalloonIsOpen())
-	{
-		output += "\C";
-	}
 	if (Shiori.Reference[0] == "f1")
 	{
-		output += "\![open,readme]";
+		return "\![open,readme]";
 	}
 	else if (Shiori.Reference[0] == "t")
 	{
-		output += OnAiTalk();
+		return OnAiTalk();
 	}
 	else if (Shiori.Reference[0] == "r")
 	{
-		output += OnLastTalk();
+		return OnLastTalk();
 	}
-	return output;
 }
 
 function OnSurfaceRestore
@@ -113,10 +107,24 @@ function OnSurfaceRestore
 	// //Um.......... damn idk how to get EPOCH either :joy:
 // }
 
-//TODO THIS IS TEMPORARY i just wanna see my boy move around a little
 function OnSecondChange
 {
-	if (Random.GetIndex(0,60) == 0 && !BalloonIsOpen())
+	//TODO temporary workaround... it's a little janky? but it should have roughly the same effect, I think...
+	local busy = 0;
+	if (Shiori["talking"] || Shiori["choosing"]) //TODO i want to use balloon here... I think it will fix the issue I'm having with it resetting the timer
+	{
+		busy = 1;
+	}
+	if (busy)
+	{
+		PoseTimer = 0;
+	}
+	if (!busy)
+	{
+		PoseTimer += 1;
+	}
+	
+	if (Random.GetIndex(0,4) == 0 && PoseTimer % 15 == 0 && !BalloonIsOpen())
 	{
 		return OnSurfaceRestore;
 	}
@@ -163,7 +171,7 @@ function FormatLinks(links)
 		//Alternate between adding  or 
 		if (i % 2 == 1)
 		{
-			output += (2).ToAscii(); //TODO test on a version of SSP that can open this link to see lol
+			output += (2).ToAscii();
 		}
 		else
 		{

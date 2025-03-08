@@ -80,7 +80,7 @@ function OnSakuraMenu(initial)
 	output += "\n\n\n\![quicksection,true]\![no-autopause]";
 	
 	output += "\![*]\q[Talk to me,OnAiTalk]";
-	if (!Save.Data.LastTalk == "")
+	if (!LastTalk == "")
 	{
 		output += "  \![*]\q[Say that again,OnLastTalk]";
 	}
@@ -128,7 +128,7 @@ function OnSakuraMenu(initial)
 
 function OnLastTalk
 {
-	return Save.Data.LastTalk;
+	return LastTalk;
 }
 
 function StoryQuestion

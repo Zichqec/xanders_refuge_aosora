@@ -1,9 +1,11 @@
 function OnAiTalk
 {
-	Save.Data.LastTalk = "";
+	LastTalk = "";
 	
-	Save.Data.LastTalk = RandomTalk();
-	return Save.Data.LastTalk;
+	//NOTE - no chain setup here just because Xander doesn't use them. I'm thinking I'll write one though...
+	LastTalk = RandomTalk;
+	//LastTalk = Reflection.Get("RandomTalk")();
+	return LastTalk;
 }
 
 talk RandomTalk
