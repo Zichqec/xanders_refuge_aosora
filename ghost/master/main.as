@@ -17,7 +17,7 @@ function OnAosoraDefaultSaveData
 function OnAosoraLoad
 {
 	//ランダムトークの設定
-	TalkTimer.RandomTalk = OnAiTalk();
+	TalkTimer.RandomTalk = OnAiTalk;
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
 	LastTalk = "";
 	PoseTimer = 0;
