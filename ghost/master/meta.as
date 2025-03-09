@@ -96,8 +96,8 @@ function OnUpdateReady
 {
 	//Number of files starts from 0, so this displays the correct amount
 	local newfiles = Shiori.Reference[0];
-	newfiles.ToNumber();
-	newfiles += 1; //TODO i'm having an issue where this is coming out as a string and not a number??
+	newfiles = newfiles.ToNumber();
+	newfiles += 1;
 	
 	//plural checks, adds an s and changes is to are if there's more than 1 file
 	local s = "";
