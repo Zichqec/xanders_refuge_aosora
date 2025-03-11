@@ -101,7 +101,7 @@ function OnUpdateReady
 	
 	//plural checks, adds an s and changes is to are if there's more than 1 file
 	local s = "";
-	local are = "";
+	local are = "is";
 	if (newfiles != 1)
 	{
 		s = "s";
@@ -148,11 +148,6 @@ function OnUpdateFailure
 	}
 	
 	return "\0\i[10]Could not update: {reason}.\n\n{Shiori.Reference[1]}";
-}
-
-function test
-{
-	return "testing network update stuff";
 }
 
 //—————————————————————————————— SNTP (clock fixing) ——————————————————————————————
