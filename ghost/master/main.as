@@ -11,6 +11,8 @@ function OnAosoraDefaultSaveData
 	Save.Data.KnowSajun = 0;
 	Save.Data.KnowMalous = 0;
 	LastTalk = "";
+	MenuPoses = [];
+	MenuGreetings = [];
 }
 
 //SHIORIロード後

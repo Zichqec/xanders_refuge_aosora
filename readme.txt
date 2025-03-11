@@ -4,12 +4,7 @@ This is a port of my ghost "Xander's Refuge". He was originally written in YAYA,
 
 You can use him to compare the implementation of various functions and events between the two SHIORI. Just keep in mind that my Aosora code is pretty clumsy; I think in a YAYA way, and this ghost was designed in a YAYA way, so I'm sure I am not using Aosora to its fullest extent!
 
-There are a few small differences between this version and the YAYA version which I am aware of and have not yet been able to resolve.
-1. The timer for changing poses between dialogues is slightly inaccurate sometimes.
-2. The menu greetings and pose selection don't have nonoverlap.
-3. There's no aigraph yet (but this only matters for me since it's dev info).
-
-Any other differences you find between this version and the original YAYA version are a bug, please report them!
+The only difference in functioning between this version and the YAYA version that I am aware of is that his aigraph does not output data about his various word groups. I'm unconcerned about this because it's a debug feature (and there isn't a good way to support it). Any other differences you find are a bug, please report them!
 
 
 Original readme:

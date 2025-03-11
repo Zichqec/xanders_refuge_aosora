@@ -2,14 +2,15 @@ function OnMouseDoubleClick
 {
 	if (Shiori.Reference[5] == 0)
 	{
-		return OnSakuraMenu("initial");
+		return OnSakuraMenu;
 	}
 }
 
 function SakuraMenuGreetings
 {
-	local output = "";
-	output += Random.Select([
+	//BIG difference here between the YAYA version and Aosora version. I couldn't just apply nonoverlap here like I would with YAYA, so I made my own implementation for this function! It means there are a couple extra variables, but they shouldn't be saved between boots, so it's fine...
+	//Basically, create temporary arrays of the base values, and pop out one value to use at a time. Once they're all used up, regenerate the array.
+	local baseposes = [
 		"\s[11]",
 		"\s[111]",
 		"\s[113]",
@@ -21,9 +22,9 @@ function SakuraMenuGreetings
 		"\s[131]",
 		"\s[230]",
 		"\s[231]"
-	]);
+	];
 	
-	local greetings = [
+	local basegreetings = [
 		"Mm?",
 		"What?",
 		"Human?",
@@ -42,10 +43,28 @@ function SakuraMenuGreetings
 	
 	if (Save.Data.AskedGods == 1)
 	{
-		greetings.Add("Can't a deity from aeons past smoke in peace?");
+		basegreetings.Add("Can't a deity from aeons past smoke in peace?");
 	}
 	
-	output += Random.Select(greetings);
+	if (MenuPoses.length == 0)
+	{
+		MenuPoses = baseposes;
+	}
+	
+	if (MenuGreetings.length == 0)
+	{
+		MenuGreetings = basegreetings;
+	}
+	
+	local output = "";
+	
+	local poseindex = Random.GetIndex(0, MenuPoses.length);
+	output += MenuPoses[poseindex];
+	MenuPoses.Remove(poseindex);
+	
+	local greetingindex = Random.GetIndex(0, MenuGreetings.length);
+	output += MenuGreetings[greetingindex];
+	MenuGreetings.Remove(greetingindex);
 	
 	return output;
 }
@@ -54,9 +73,8 @@ function OnSakuraMenu(initial)
 {
 	output = "";
 	
-	//Workaround for not having YAYA's eventid stuff
 	local isinitial = 0;
-	if (initial == "initial")
+	if (Shiori.Headers.ID == "OnMouseDoubleClick")
 	{
 		isinitial = 1;
 	}
