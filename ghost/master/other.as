@@ -101,40 +101,36 @@ function OnSurfaceRestore
 	return output;
 }
 
-// function OnSecondChange
-// {
-	// //TODO i want to try to add in an equivalent of TalkEndTime here so that he only does this 15 seconds after a dialogue ends...
-	// //Um.......... damn idk how to get EPOCH either :joy:
-// }
-
 function OnSecondChange
 {
-	//TODO temporary workaround... it's a little janky? but it should have roughly the same effect, I think...
-	local busy = 0;
-	if (Shiori["talking"] || Shiori["choosing"]) //TODO i want to use balloon here... I think it will fix the issue I'm having with it resetting the timer
+	//Attempting to recreate YAYA's TalkEndTime... it doesn't quite work because YAYA does this on the request function, and here I can only do it in OnSecondChange, so it's not completely the same but I'm hoping it's close enough
+	
+	if (CanTalkFlag != CanTalk())
 	{
-		busy = 1;
+		CanTalkFlag = CanTalk();
 	}
-	if (busy)
+	if (!CanTalk())
 	{
-		PoseTimer = 0;
-	}
-	if (!busy)
-	{
-		PoseTimer += 1;
+		TalkEndTime = Time.GetNowUnixEpoch();
 	}
 	
-	if (Random.GetIndex(0,4) == 0 && PoseTimer % 15 == 0 && !BalloonIsOpen())
+	
+	local since = Time.GetNowUnixEpoch() - TalkEndTime;
+	
+	if (since % 15 == 0 && !BalloonIsOpen())
 	{
-		return OnSurfaceRestore;
+		if (Random.GetIndex(0,4) == 0)
+		{
+			return OnSurfaceRestore;
+		}
 	}
 }
 
-//TODO BalloonIsOpen
-//I am unsure how to work this without documentation...
 function BalloonIsOpen
 {
-	if (Shiori["choosing"])
+	local shioristatus = Shiori.Headers.Status.ToString();
+	local found = !shioristatus.IndexOf("balloon").IsNull();
+	if (found)
 	{
 		return 1;
 	}
@@ -151,7 +147,6 @@ function OnWindowStateRestore
 
 function homeurl
 {
-	//just "aosora" or "aosora port"...
 	return "https://raw.githubusercontent.com/Zichqec/xanders_refuge_aosora/main/";
 }
 

@@ -22,7 +22,8 @@ function OnAosoraLoad
 	TalkTimer.RandomTalk = OnAiTalk;
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
 	LastTalk = "";
-	PoseTimer = 0;
+	TalkEndTime = Time.GetNowUnixEpoch();
+	CanTalkFlag = 0;
 }
 
 //喋り間隔の設定
@@ -65,4 +66,16 @@ function OnNotifySelfInfo
 function OnBalloonChange
 {
 	CurrentBalloonName = Shiori.Reference[0];
+}
+
+function CanTalk
+{
+	if (Shiori["talking"] || Shiori["choosing"] || Shiori["minimizing"] || Shiori["timecritical"])
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
 }
