@@ -200,8 +200,10 @@ function StoryQuestion
 function OnChangeTalkrate
 {
 	local interval = Shiori.Reference[0];
-	SetTalkInterval(interval);
-	//I mostly copied this from the existing talk rate change function...
+	TalkTimer.RandomTalkIntervalSeconds = interval;
+	TalkTimer.RandomTalkElapsedSeconds = 0;
+	Save.Data.TalkInterval = interval;
+	
 	return `\C\![no-autopause]\![raise,OnSakuraMenu,"{Shiori.Reference[1]}"]`;
 }
 
