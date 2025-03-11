@@ -212,7 +212,11 @@ function br
 	}
 }
 
-//TODO On_getaistateex
-//Hahaaaa this MAY be possible for randomtalk depending on what nanachi says, but the word groups absolutely not
+//This is simplified compared to the YAYA version of this ghost. I didn't bother trying to replicate it since I won't be able to get the count of the items in the word groups and this is just a debug feature anyways
+function getaistate
+{
+	local byte1 = (1).ToAscii;
+	return "{RandomTalk.length},0,0{byte1}RandomTalk,Dummy,Dummy";
+}
 
 //Moved needle and spectre responses to commu.as since they're gonna be a bit long
