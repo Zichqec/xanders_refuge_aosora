@@ -26,6 +26,18 @@ function OnAosoraLoad
 	MenuGreetings = [];
 }
 
+function OnBoot()
+{
+	Save.Data.TotalBoots += 1;
+	return "\1\s[-1]\0\s[0]" + BootTalk();
+}
+
+function OnClose()
+{
+	return CloseTalk() + "\_w[1000]\-";
+}
+
+
 //—————————————————————————————— Recreated YAYA functions ——————————————————————————————
 //This is a ghost ported from YAYA... and it turns out that YAYA has a bunch of functions that make things easy for me that I didn't account for! So here's where I'm going to recreate those as needed...
 //Well, more or less recreate. Some of it I really can't, but usually just the really fiddly super specific stuff
