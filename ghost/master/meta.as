@@ -129,7 +129,9 @@ function OnUpdateFailure
 {
 	//TODO idk how to do SPLITPATH here...
 	//Need to do a normal split but first i need to see what the file paths look like. i'm assuming a forward slash, but...
-	local badfile = ""; //For MD5 errors, this gets the name and extension of the offending file
+	local badfilepath = Shiori.Reference[0]; //For MD5 errors, this gets the name and extension of the offending file
+	badfilepath = badfilepath.Split("/");
+	local badfile = badfilepath[badfilepath.length];
 	local reason = Shiori.Reference[0];
 	
 	if (Shiori.Reference[0] == "timeout")

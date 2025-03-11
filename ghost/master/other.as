@@ -219,5 +219,3 @@ function getaistate
 	local byte1 = (1).ToAscii;
 	return "{RandomTalk.length},0,0{byte1}RandomTalk,Dummy,Dummy";
 }
-
-//Moved needle and spectre responses to commu.as since they're gonna be a bit long
