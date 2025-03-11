@@ -127,11 +127,6 @@ function OnUpdateComplete
 
 function OnUpdateFailure
 {
-	//TODO idk how to do SPLITPATH here...
-	//Need to do a normal split but first i need to see what the file paths look like. i'm assuming a forward slash, but...
-	local badfilepath = Shiori.Reference[0]; //For MD5 errors, this gets the name and extension of the offending file
-	badfilepath = badfilepath.Split("/");
-	local badfile = badfilepath[badfilepath.length];
 	local reason = Shiori.Reference[0];
 	
 	if (Shiori.Reference[0] == "timeout")
@@ -140,14 +135,14 @@ function OnUpdateFailure
 	}
 	else if (Shiori.Reference[0] == "md5 miss")
 	{
-		reason = "MD5 error on file {badfile}\n\nPlease contact the ghost author for assistance";
+		reason = "MD5 error on file {Shiori.Reference[1]}\n\nPlease contact the ghost author for assistance";
 	}
 	else if (Shiori.Reference[0] == "artificial")
 	{
 		reason = "canceled by user";
 	}
 	
-	return "\0\i[10]Could not update: {reason}.\n\n{Shiori.Reference[1]}";
+	return "\0\i[10]Could not update: {reason}.";
 }
 
 //—————————————————————————————— SNTP (clock fixing) ——————————————————————————————
