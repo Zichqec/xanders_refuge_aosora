@@ -157,36 +157,6 @@ function ghostver
 	return "1.0.2-a01";
 }
 
-function test
-{
-	return "testing network update stuff";
-}
-
-function test
-{
-	return "testing network update stuff";
-}
-
-function test
-{
-	return "testing network update stuff";
-}
-
-function test
-{
-	return "testing network update stuff";
-}
-
-function test
-{
-	return "testing network update stuff";
-}
-
-function test
-{
-	return "testing network update stuff";
-}
-
 //—————————————————————————————— Right click menu links ——————————————————————————————
 function FormatLinks(links)
 {
