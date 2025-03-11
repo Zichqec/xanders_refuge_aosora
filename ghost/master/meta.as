@@ -150,6 +150,10 @@ function OnUpdateFailure
 	return "\0\i[10]Could not update: {reason}.\n\n{Shiori.Reference[1]}";
 }
 
+function test
+{
+	return "testing network update stuff";
+}
 
 //—————————————————————————————— SNTP (clock fixing) ——————————————————————————————
 //https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnSNTPBegin
