@@ -10,25 +10,20 @@ talk OnFirstBoot
 	
 	\s[0]I won't tell anyone you're hiding, you{br}won't tell anyone I'm hiding. \s[111]Fair?
 
-	\_q\![*]\q[Fair.,OnFirstBootEnd,Fair]  \![*]\q[Who's Xaeyar?,OnFirstBootEnd,Who]
+	\_q\![*]\q[Fair.,OnFirstBootEnd_Fair]  \![*]\q[Who's Xaeyar?,OnFirstBootEnd_Who]
 }
 
-function OnFirstBootEnd
+talk OnFirstBootEnd_Fair
 {
-	if (Shiori.Reference[0] == "Fair")
-	{
-		return "\0\s[0]Thought so. {smoke(2)}\s[200]Call me Xander. \s[111]I'm trying to lay low, and all that.";
-	}
-	else
-	{
+	\s[0]Thought so. {smoke(2)}\s[200]Call me Xander. \s[111]I'm trying to lay low, and all that.
+}
+
+talk OnFirstBootEnd_Who
+{
+	%{
 		Save.Data.AskedGods = 2;
-		return FirstBootEndDontKnow;
 	}
-}
-
-talk FirstBootEndDontKnow
-{
-	\0\s[130]You don't know Xaeyar, master of all things chance? \s[220]Praised at unlikely victories, and cursed at every misfortune? \s[211]God of luck since aeons past? 
+	\s[130]You don't know Xaeyar, master of all things chance? \s[220]Praised at unlikely victories, and cursed at every misfortune? \s[211]God of luck since aeons past? 
 	
 	... \w8\w8\w8\s[231]What rock have you been living under?\w8\w8\w8
 	
