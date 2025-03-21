@@ -71,11 +71,11 @@ function OnKeyPress
 	}
 	else if (Shiori.Reference[0] == "t")
 	{
-		return OnAiTalk();
+		return OnAiTalk;
 	}
 	else if (Shiori.Reference[0] == "r")
 	{
-		return OnLastTalk();
+		return OnLastTalk;
 	}
 }
 
