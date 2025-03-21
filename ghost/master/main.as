@@ -1,7 +1,6 @@
 //Default save data
 function OnAosoraDefaultSaveData
 {
-	Save.Data.UserName = "Mortal";
 	Save.Data.TalkInterval = 180;
 	Save.Data.TotalBoots = 0;
 	Save.Data.StoryIndex = 0;
@@ -21,7 +20,6 @@ function OnAosoraLoad
 	LastTalk = "";
 	TalkEndTime = Time.GetNowUnixEpoch();
 	CanTalkFlag = 0;
-	LastTalk = "";
 	MenuPoses = [];
 	MenuGreetings = [];
 }
