@@ -222,9 +222,9 @@ function br
 	}
 }
 
-//This is simplified compared to the YAYA version of this ghost. I didn't bother trying to replicate it since I won't be able to get the count of the items in the word groups and this is just a debug feature anyways
+//This is simplified compared to the YAYA version of this ghost. Because of how I had to do word groups differently, I can't perfectly replicate that code... so I'm just going to leave it in this simple form. It's just a debug thing anyways.
 function getaistate
 {
 	local byte1 = (1).ToAscii;
-	return "{RandomTalk.length},0,0{byte1}RandomTalk,Dummy,Dummy";
+	return "{RandomTalk.length},{overthere_list().length},{closeshave_list().length},{weirdinvention_list().length}{byte1}RandomTalk,overthere,closeshave,weirdinvention";
 }
