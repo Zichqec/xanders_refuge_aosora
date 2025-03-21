@@ -69,7 +69,7 @@ function SakuraMenuGreetings
 	return output;
 }
 
-function OnSakuraMenu(initial)
+function OnSakuraMenu
 {
 	output = "";
 	
@@ -90,7 +90,7 @@ function OnSakuraMenu(initial)
 	{
 		greet = SakuraMenuGreetings();
 	}
-	else
+	else if (!Shiori.Reference[0].IsNull())
 	{
 		greet = Shiori.Reference[0];
 	}
@@ -102,7 +102,6 @@ function OnSakuraMenu(initial)
 	{
 		output += "  \![*]\q[Say that again,OnLastTalk]";
 	}
-	
 	output += "\n";
 	
 	output += "\![*]{StoryQuestion()}";
@@ -125,9 +124,7 @@ function OnSakuraMenu(initial)
 			output += `\__q[OnChangeTalkrate,{time.Split(',')[1]},"{greet}"]{time.Split(',')[0]}\__q `;
 		}
 	}
-	
 	output += "\n\n";
-	
 	output += "\![*]\q[Nevermind,OnMenuClose]";
 	
 	output += "\_l[0,0]";
@@ -139,9 +136,7 @@ function OnSakuraMenu(initial)
 	}
 	output += greet;
 	
-	
 	return output;
-	
 }
 
 function OnLastTalk
@@ -209,5 +204,5 @@ function OnChangeTalkrate
 
 function OnMenuClose
 {
-	return "\_w[{Random.GetIndex(1,4) * 1000}]{OnSurfaceRestore}\_w[3000]"; //The pause at the end here is superfluous, but it matches the YAYA version...
+	return "\_w[{Random.GetIndex(1,4) * 1000}]{OnSurfaceRestore}";
 }
