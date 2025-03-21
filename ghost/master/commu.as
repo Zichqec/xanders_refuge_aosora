@@ -135,7 +135,7 @@ function OnSpectrePlugin@Possession
 {
 	if (Random.GetIndex(0,4) == 0)
 	{
-		return Reflection.Get("SpectreReaction");
+		return SpectreReaction;
 	}
 }
 
