@@ -8,6 +8,7 @@ function OnTranslate
 	
 	//IMPORTANT NOTE FOR THIS PORT: Aosora uses @ in place of . in function names because it uses dot notation and can't have . in function names.
 	//THEREFORE - making a system like this introduces *the possibility of accidental replacements when you're calling functions with tags like raise or menu choices. be careful.*
+	//I kept the @ symbols here just for parity with the YAYA version
 	talkstr = talkstr.Replace("@Aion","\_a[OnAskGods,Aion]Aion\_a");
 	talkstr = talkstr.Replace("@Dueyar","\_a[OnAskGods,Dueyar]Dueyar\_a");
 	talkstr = talkstr.Replace("@Xaeyar","\_a[OnAskGods,Xaeyar]Xaeyar\_a");
@@ -33,6 +34,7 @@ function OnTranslate
 
 function AutoPause(talkstr)
 {
+	//Note: I added an extra check here for the "aosora reload" bit, because aosora's reload text after an error bends to autopause! It was mildly annoying me, so I added an exception for it lol
 	if (talkstr.IndexOf("\![no-autopause]").IsNull() && talkstr.IndexOf("■Aosora reload completed").IsNull())
 	{
 		talkstr = talkstr.Replace(", ",",\w4 ");
@@ -112,7 +114,7 @@ function OnSurfaceRestore
 
 function OnSecondChange
 {
-	//Attempting to recreate YAYA's TalkEndTime... it doesn't quite work because YAYA does this on the request function, and here I can only do it in OnSecondChange, so it's not completely the same but I'm hoping it's close enough
+	//Attempting to recreate YAYA's TalkEndTime... it doesn't quite work because YAYA does this in the request function, and here I can only do it in OnSecondChange, so it's not completely the same but I'm hoping it's close enough
 	
 	if (CanTalkFlag != CanTalk())
 	{
@@ -135,6 +137,7 @@ function OnSecondChange
 	}
 }
 
+//Will be 0 if the balloon is not open, and 1 if the balloon is open
 function BalloonIsOpen
 {
 	local shioristatus = Shiori.Headers.Status.ToString();
@@ -186,11 +189,6 @@ function FormatLinks(links)
 	return output;
 }
 
-function OnTestLinks
-{
-	return FormatLinks(recommendsites_sakura());
-}
-
 function sakura@recommendsites
 {
 	return FormatLinks(recommendsites_sakura());
@@ -203,7 +201,6 @@ function recommendsites_sakura
 		"Zi's Ukagaka Space", "https://ukagaka.zichqec.com/"
 	];
 }
-
 
 function username
 {
