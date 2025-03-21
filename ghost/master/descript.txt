@@ -1,6 +1,6 @@
 charset,UTF-8
 
-name,Xander's Refuge (Aosora port)
+name,Xander's Refuge (Aosora)
 type,ghost
 
 shiori,aosora.dll
