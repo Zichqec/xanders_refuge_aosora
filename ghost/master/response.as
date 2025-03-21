@@ -1,24 +1,6 @@
 function OnAskGods
 {
-	if (Shiori.Reference[0] == "Aion")
-	{
-		Save.Data.KnowAion = 1;
-	}
-	else if (Shiori.Reference[0] == "Dueyar")
-	{
-		Save.Data.KnowDueyar = 1;
-	}
-	else if (Shiori.Reference[0] == "Sajun")
-	{
-		Save.Data.KnowSajun = 1;
-	}
-	else if (Shiori.Reference[0] == "Malous")
-	{
-		Save.Data.KnowMalous = 1;
-	}
-	
-	local output = "";
-	
+	//The structure here is a lot different because I wanted to make use of talk blocks...
 	if (Save.Data.AskedGods == 1)
 	{
 		//Note the () at the end there - with Reflection.Get you can only add a string like this when you've made Reflection.Get into a function call, I think...? My brain's a little muddled but this is how I was told I could do it. Can make it a little more verbose as well if this is confusing.
@@ -26,30 +8,32 @@ function OnAskGods
 	}
 	else //first time asking
 	{
+		local output = "";
 		if (Shiori.Reference[0] == "Xaeyar") //Asking about him
 		{
 			if (Save.Data.AskedGods == 2) //If you asked in the firstboot
 			{
-				Save.Data.AskedGods = 1;
-				return OnAskGods_FirstTime_Xaeyar_A;
+				output = OnAskGods_FirstTime_Xaeyar_A;
 			}
 			else //If you didn't ask
 			{
-				Save.Data.AskedGods = 1;
-				return OnAskGods_FirstTime_Xaeyar_B;
+				output = OnAskGods_FirstTime_Xaeyar_B;
 			}
 		}
 		else //Asking about a different god first
 		{
-			Save.Data.AskedGods = 1;
-			return OnAskGods_FirstTime_Other;
+			output = OnAskGods_FirstTime_Other;
 		}
+		Save.Data.AskedGods = 1;
+		return output;
 	}
 }
 
 talk OnAskGods_Aion
 {
-	\0\s[222]Aion is the god of fate. They're the ultimate authority on everything, even the gods. \s[213]Absolutely nothing escapes their grasp. 
+	%{
+		Save.Data.KnowAion = 1;
+	}
 	
 	\s[0]Despite that, they tend to stay out of our quibbles. \s[111]After all, why bother to fight when things will go your way regardless? 
 	
@@ -60,7 +44,9 @@ talk OnAskGods_Aion
 
 talk OnAskGods_Dueyar
 {
-	\0\s[220]Dueyar is the god of justice and order, and I suppose you could call her my sister. \s[221]It's a little more complicated than that, but I wouldn't expect a mortal to understand. 
+	%{
+		Save.Data.KnowDueyar = 1;
+	}
 	
 	{smoke(2)}\s[211]We have... \s[200]some disagreements. \s[220]She rather likes for fate's plans to go exactly as prescribed, \s[121]and I do not. 
 	
@@ -156,14 +142,18 @@ talk OnAskGods_Vismir
 
 talk OnAskGods_Sajun
 {
-	\0\s[111]Sajun is one half of the god of joy. \s[11]He and his "brother" @Malous used to be a singular being, \w4\s[200]but they were deemed too powerful and were split in two. \s[211]Together they could give and take joy at will, but alone, Sajun can only give joy. 
+	%{
+		Save.Data.KnowSajun = 1;
+	}
 	
 	\s[231]I know "god that gives joy" sounds nice on the surface, but a fragile mortal such as yourself should avoid him at all costs. \s[111]His{br}"joy" primarily comes from watching others suffer.
 }
 
 talk OnAskGods_Malous
 {
-	\0\s[111]Malous is one half of the god of joy. \s[11]He and his "brother" @Sajun used to be a singular being, \w4\s[200]but they were deemed too powerful and were split in two. \s[211]Together they could give and take joy at will, but alone, Malous can only take joy. 
+	%{
+		Save.Data.KnowMalous = 1;
+	}
 	
 	\s[130]I know "god that takes joy" sounds terrible on the surface, but he's generally very reasonable, and makes good company. \s[11]He'd do anything for his brother though, so he's still best avoided by mortals.
 }
@@ -217,9 +207,11 @@ talk OnAskGods_Bridge_Xaeyar
 	{smoke}\s[111]As I said previously, I am the god of luck. {XaeyarDescript}
 }
 
-function OnAskGods_Bridge
+talk OnAskGods_Bridge
 {
-	return "\0\s[222]Yes, yes, of course. You wanted to know about {Shiori.Reference[0]} in particular. \s[11]Hmm. \w8\s[0]I don't usually have to explain my brethren, where do I begin... \w8\w8\n\n {smoke}\![embed,OnAskGods_{Shiori.Reference[0]}]";
+	\s[222]Yes, yes, of course. You wanted to know about {Shiori.Reference[0]} in particular. \s[11]Hmm. \w8\s[0]I don't usually have to explain my brethren, where do I begin... \w8\w8
+
+	{smoke}\![embed,OnAskGods_{Shiori.Reference[0]}]\x
 }
 
 talk XaeyarDescript
@@ -231,13 +223,13 @@ talk XaeyarDescript
 
 function OnStory
 {
-	if (Shiori.Reference[0] == "")
+	if (!Shiori.Reference[0].IsNull())
 	{
-		return OnStory@Locked + "locked\x";
+		return Reflection.Get("OnStory@" + Shiori.Reference[0])() + "\x";
 	}
-	else
+	else //There isn't really a reason for this to exist because I'm using Reflection.Get, but... as a failsafe, I guess
 	{
-		return Reflection.Get("OnStory@" + Shiori.Reference[0]);
+		return OnStory@Locked() + "\x";
 	}
 }
 
