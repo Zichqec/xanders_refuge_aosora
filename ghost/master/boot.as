@@ -36,128 +36,128 @@ talk OnFirstBootEnd_Who
 //—————————————————————————————— Booting ——————————————————————————————
 talk BootTalk
 {
-	\0\s[11]Hm? Oh, \s[0]it's just you again. 
+	\s[11]Hm? Oh, \s[0]it's just you again. 
 	
 	{smoke}\s[30]What's up?
 }
 
 talk BootTalk
 {
-	\0\s[11]The human appears. Greetings.
+	\s[11]The human appears. Greetings.
 }
 
 talk BootTalk
 {
-	\0\s[22]... \w8\w8\w8
+	\s[22]... \w8\w8\w8
 	
 	\s[11]Ah- \w8\s[30]when did you get here? \w8\w8\s[222]Well, I suppose I could do worse for company.
 }
 
 talk BootTalk
 {
-	\0\s[0]Hey. \w8\w8{smoke}\s[200]
+	\s[0]Hey. \w8\w8{smoke}\s[200]
 }
 
 talk BootTalk
 {
-	\0\s[11]There you are. \s[0]I knew you'd be coming.
+	\s[11]There you are. \s[0]I knew you'd be coming.
 }
 
 talk BootTalk
 {
-	\0\s[11]Hey. \s[211]You didn't see @Dueyar out there looking for me, did you? 
+	\s[11]Hey. \s[211]You didn't see @Dueyar out there looking for me, did you? 
 	
 	\s[220]I suppose not, you don't look terrified enough for that. {smoke(2)}\s[200]
 }
 
 talk BootTalk
 {
-	\0\s[11]Mm? \s[111]Oh, hey. \s[22]I was just thinking I might head out. 
+	\s[11]Mm? \s[111]Oh, hey. \s[22]I was just thinking I might head out. 
 	
 	{smoke}\s[13]Ah, what the hell, a few more hours won't{br}kill 'em.
 }
 
 talk BootTalk
 {
-	\0\s[11]You've decided to join me today, have you?
+	\s[11]You've decided to join me today, have you?
 }
 
 talk BootTalk
 {
-	\0\s[11]It's the human again. \s[0]Still hiding, are we?
+	\s[11]It's the human again. \s[0]Still hiding, are we?
 }
 
 talk BootTalk
 {
-	\0\s[11]Ah, I am graced with the presence of the mortal. \s[0]What can this deity do for you on such a dreary day.
+	\s[11]Ah, I am graced with the presence of the mortal. \s[0]What can this deity do for you on such a dreary day.
 }
 
 talk BootTalk if(Save.Data.TotalBoots > 3)
 {
-	\0\s[11]I was wondering if you'd show up today. \s[0]We seem to end up here together a lot.
+	\s[11]I was wondering if you'd show up today. \s[0]We seem to end up here together a lot.
 }
 
 talk BootTalk if(Save.Data.TotalBoots > 3)
 {
-	\0\s[11]I wasn't expecting to see you today. \s[0]Not that I particularly mind your presence.
+	\s[11]I wasn't expecting to see you today. \s[0]Not that I particularly mind your presence.
 }
 
 
 //—————————————————————————————— Closing ——————————————————————————————
 talk CloseTalk
 {
-	\0\s[111]Leaving? \s[11]I was just thinking I should head out too. 
+	\s[111]Leaving? \s[11]I was just thinking I should head out too. 
 	
 	\s[213]Can't dodge my duties forever. \s[211]See you around.
 }
 
 talk CloseTalk
 {
-	\0\s[111]Done running from your problems? 
+	\s[111]Done running from your problems? 
 	
 	\s[13]I'm not, I'll be here a while yet if you decide you want to come back.
 }
 
 talk CloseTalk
 {
-	\0\s[11]I'll be here if you decide to come by again.
+	\s[11]I'll be here if you decide to come by again.
 }
 
 talk CloseTalk
 {
-	\0\s[222]Leaving me by myself, eh? 
+	\s[222]Leaving me by myself, eh? 
 	
 	\s[211]Fair enough, off you go.
 }
 
 talk CloseTalk
 {
-	\0\s[200]I should get going before I'm missed. \s[211]I'm sure I'll be back this way again.
+	\s[200]I should get going before I'm missed. \s[211]I'm sure I'll be back this way again.
 }
 
 talk CloseTalk
 {
-	\0\s[11]Mm? On your way out? \s[0]So long, then.
+	\s[11]Mm? On your way out? \s[0]So long, then.
 }
 
 talk CloseTalk
 {
-	\0\s[0]Don't get lost on the way home.
+	\s[0]Don't get lost on the way home.
 }
 
 talk CloseTalk
 {
-	\0\s[0]Best hurry if you're heading out, there's rain on the way. \s[111]Someone else in town is in need of a good drenching, \s[11]but you don't{br}have to be caught up in it if you're quick.
+	\s[0]Best hurry if you're heading out, there's rain on the way. \s[111]Someone else in town is in need of a good drenching, \s[11]but you don't{br}have to be caught up in it if you're quick.
 }
 
 talk CloseTalk
 {
-	\0\s[11]Until next time, then. \s[0]I'll be around this area for the foreseeable future.
+	\s[11]Until next time, then. \s[0]I'll be around this area for the foreseeable future.
 }
 
 talk CloseTalk
 {
-	\0\s[11]Tired of my company at last? \s[0]Or perhaps you have other places to be. \s[30]Off you go, then.
+	\s[11]Tired of my company at last? \s[0]Or perhaps you have other places to be. \s[30]Off you go, then.
 }
 
 talk CloseTalk if(Save.Data.TotalBoots > 3)
@@ -167,10 +167,10 @@ talk CloseTalk if(Save.Data.TotalBoots > 3)
 
 talk CloseTalk if(Save.Data.TotalBoots > 3)
 {
-	\0\s[11]Best of luck to you.
+	\s[11]Best of luck to you.
 }
 
 talk CloseTalk if(Save.Data.TotalBoots > 3)
 {
-	\0\s[30]Oh, you're heading out? \w8\w8\s[0]Take care, then. Don't go and get eaten by a monster. \s[11]I'd hate to lose my responsibility-avoiding buddy.
+	\s[30]Oh, you're heading out? \w8\w8\s[0]Take care, then. Don't go and get eaten by a monster. \s[11]I'd hate to lose my responsibility-avoiding buddy.
 }
