@@ -4,7 +4,7 @@ This is a port of my ghost "Xander's Refuge". He was originally written in YAYA,
 
 You can use him to compare the implementation of various functions and events between the two SHIORI. Just keep in mind that my Aosora code is pretty clumsy; I think in a YAYA way, and this ghost was designed in a YAYA way, so I'm sure I am not using Aosora to its fullest extent!
 
-The only difference in functioning between this version and the YAYA version that I am aware of is that his aigraph does not output data about his various word groups. I'm unconcerned about this because it's a debug feature (and there isn't a good way to support it). Any other differences you find are a bug, please report them!
+There should be no functional differences between this version and the original YAYA version. If you find any, please report them!
 
 
 Original readme:
