@@ -1,8 +1,9 @@
-function smoke(surface)
+function smoke(arg)
 {
-	if (surface.IsNull())
+	surface = 0;
+	if (!arg.IsNull())
 	{
-		surface = 0;
+		surface = arg;
 	}
 	
 	output = "";
