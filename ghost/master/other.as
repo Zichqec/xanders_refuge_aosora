@@ -46,6 +46,15 @@ function AutoPause(talkstr)
 	return talkstr;
 }
 
+function OnAiTalk
+{
+	//NOTE - no chain setup here just because Xander doesn't use them. I'm thinking I'll write one though... eventually
+	//IIRC for the randomtalk in particular, it got weird if I called it without Reflection.Get? I need to look into this more, the specifics here keep sliding off my brain. But I remember if I had the commented out line here, it would do randomtalk via the hotkey but not on its own
+	//LastTalk = RandomTalk;
+	LastTalk = Reflection.Get("RandomTalk")();
+	return LastTalk;
+}
+
 function OnAnchorSelect
 {
 	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))

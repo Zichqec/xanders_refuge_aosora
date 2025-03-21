@@ -1,13 +1,3 @@
-function OnAiTalk
-{
-	LastTalk = "";
-	
-	//NOTE - no chain setup here just because Xander doesn't use them. I'm thinking I'll write one though...
-	//LastTalk = RandomTalk;
-	LastTalk = Reflection.Get("RandomTalk")();
-	return LastTalk;
-}
-
 talk RandomTalk
 {
 	\0\s[213]"@Xaeyar, bring us luck!"\w8\w8 "@Xaeyar, why did you let this happen to us!"\w8\w8{smoke(2)}\s[213]
