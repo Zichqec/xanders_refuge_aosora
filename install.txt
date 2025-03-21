@@ -1,3 +1,5 @@
+charset,UTF-8
 type,ghost
 name,Xander's Refuge (Aosora)
 directory,xanders_refuge_aosora_zi
+balloon.directory,flip_of_a_coin_zi
