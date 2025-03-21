@@ -79,7 +79,7 @@ function OnNarCreated
 
 function OnNarLocation
 {
-	return "\![open,explorer," + '"' + Shiori.Reference[0] + '"' + "]";
+	return `\![open,explorer,"{Shiori.Reference[0]}"]`;
 }
 
 
@@ -111,7 +111,7 @@ function OnUpdateReady
 	return "\0\i[10]There {are} {newfiles} new file{s}.\w8";
 }
 
-//When the update finishes. Don't forget to initialize any new variables you've created! I highly highly recommend using OnInitialize for this (it's in boot.dic), in case the user updates via the ghost explorer or some other means.
+//When the update finishes. Don't forget to initialize any new variables you've created! I highly highly recommend using OnInitialize for this, in case the user updates via the ghost explorer or some other means.
 //reference0 is 'none' if there were no new files to update with
 function OnUpdateComplete
 {
