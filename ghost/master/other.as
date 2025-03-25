@@ -202,11 +202,6 @@ function recommendsites_sakura
 	];
 }
 
-function username
-{
-	return Save.Data.UserName;
-}
-
 function br
 {
 	if (CurrentBalloonName == "Flip of a Coin")
