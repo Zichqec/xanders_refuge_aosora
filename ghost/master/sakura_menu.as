@@ -71,7 +71,7 @@ function SakuraMenuGreetings
 
 function OnSakuraMenu
 {
-	output = "";
+	local output = "";
 	
 	local isinitial = 0;
 	if (Shiori.Headers.ID == "OnMouseDoubleClick")
