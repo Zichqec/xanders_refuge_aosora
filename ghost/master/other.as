@@ -48,11 +48,18 @@ function AutoPause(talkstr)
 	return talkstr;
 }
 
+//Call coming from menu, hotkey, or \a
+//This is different from the YAYA version, but it allows for chains and stuff
+//I've named this differently from my other Aosora ghosts... realized that it's better if \a routes through here, plus it keeps my menu options more similar to the YAYA version.
 function OnAITalk
 {
-	//NOTE - no chain setup here just because Xander doesn't use them. I'm thinking I'll write one though... eventually
-	//IIRC for the randomtalk in particular, it got weird if I called it without Reflection.Get? I need to look into this more, the specifics here keep sliding off my brain. But I remember if I had the commented out line here, it would do randomtalk via the hotkey but not on its own
-	//LastTalk = RandomTalk;
+	LastTalk = TalkTimer.CallRandomTalk();
+	return LastTalk;
+}
+
+//Call coming from TalkTimer
+function OnSendTalk
+{
 	LastTalk = Reflection.Get("RandomTalk")();
 	return LastTalk;
 }

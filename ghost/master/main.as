@@ -14,7 +14,7 @@ function OnAosoraDefaultSaveData
 //Values to be set upon loading
 function OnAosoraLoad
 {
-	TalkTimer.RandomTalk = OnAiTalk;
+	TalkTimer.RandomTalk = OnSendTalk;
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
 	
 	LastTalk = "";
