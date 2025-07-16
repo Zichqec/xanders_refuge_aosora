@@ -79,8 +79,8 @@ function OnSakuraMenu
 	
 	output += "\n\n\n\![quicksection,true]\![no-autopause]";
 	
-	output += "\![*]\q[Talk to me,OnAiTalk]";
 	if (!LastTalk == "") output += "  \![*]\q[Say that again,OnLastTalk]";
+	output += "\![*]\q[Talk to me,OnAITalk]  ";
 	output += "\n";
 	
 	output += "\![*]{StoryQuestion()}";
