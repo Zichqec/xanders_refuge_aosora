@@ -60,7 +60,7 @@ function OnAITalk
 function OnAnchorSelect
 {
 	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://")) return `\j["{Shiori.Reference[0]}"]`;
-	
+}	
 
 function OnKeyPress
 {
