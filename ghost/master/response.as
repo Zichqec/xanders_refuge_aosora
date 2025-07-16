@@ -3,7 +3,7 @@ function OnAskGods
 	//The structure here is a lot different because I wanted to make use of talk blocks...
 	if (Save.Data.AskedGods == 1)
 	{
-		//Note the () at the end there - with Reflection.Get you can only add a string like this when you've made Reflection.Get into a function call, I think...? My brain's a little muddled but this is how I was told I could do it. Can make it a little more verbose as well if this is confusing.
+		//Note the () at the end there - that embeds the output of Reflection.Get because you can't add a string to a function, you have to add a string to the *result of* a function.
 		return Reflection.Get("OnAskGods_" + Shiori.Reference[0])() + "\x";
 	}
 	else //first time asking
