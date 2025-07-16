@@ -1,6 +1,7 @@
 function OnAskGods
 {
 	//The structure here is a lot different because I wanted to make use of talk blocks...
+	//Well, the logic is the same structure, but the talk blocks are separated out below!
 	if (Save.Data.AskedGods == 1)
 	{
 		//Note the () at the end there - that embeds the output of Reflection.Get because you can't add a string to a function, you have to add a string to the *result of* a function.
