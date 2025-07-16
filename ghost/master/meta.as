@@ -14,8 +14,10 @@ function OnInstallComplete
 	if (Shiori.Reference[0].Contains("ghost"))
 	{
 		output += "\n\n\_q";
+		
 		output += "\![*]\__q[OnInstallComplete@Action,call]Call {Shiori.Reference[1]}\__q  \![*]\__q[OnInstallComplete@Action,change]Change to {Shiori.Reference[1]}\__q\n\n";
-		output += "\![*]\q[Thanks,blank]";
+		
+		output += "\![*]\__q[blank]Done\__q";
 	}
 	
 	return output;
