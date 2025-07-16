@@ -192,9 +192,35 @@ function br
 	else return " ";
 }
 
-//This is simplified compared to the YAYA version of this ghost. Because of how I had to do word groups differently, I can't perfectly replicate that code... so I'm just going to leave it in this simple form. It's just a debug thing anyways.
-function getaistate
+//There's a bit of custom weirdness here to handle the word group counters lol. Look for the "contains _list" bits
+function getaistateex
 {
-	local byte1 = (1).ToAscii;
-	return "{RandomTalk.length},{overthere_list().length},{closeshave_list().length},{weirdinvention_list().length}{byte1}RandomTalk,overthere,closeshave,weirdinvention";
+	local output = "";
+	local graph = AI_Graphs()[Shiori.Reference[0]];
+	if (graph.length > 0)
+	{
+		items = graph;
+		for (local i = 0; i < items.length; i++)
+		{
+			if (i > 0) output += ",";
+			if (items[i].Contains("_list")) output += Reflection.Get("{items[i]}")().length;
+			else output += Reflection.Get("{items[i]}").length; //RandomTalk
+		}
+		output += "{(1).ToAscii}";
+		for (local i = 0; i < items.length; i++)
+		{
+			if (i > 0) output += ",";
+			if (items[i].Contains("_list")) items[i] = items[i].Replace("_list","");
+			output += "{items[i]}";
+		}
+	}
+	return output;
+}
+
+function AI_Graphs
+{
+	//Multidimensional arrays!!! I love you Aosora
+	return [
+		["RandomTalk","overthere_list","closeshave_list","weirdinvention_list"],
+	];
 }
