@@ -59,26 +59,14 @@ function OnAiTalk
 
 function OnAnchorSelect
 {
-	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))
-	{
-		return `\j["{Shiori.Reference[0]}"]`;
-	}
-}
+	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://")) return `\j["{Shiori.Reference[0]}"]`;
+	
 
 function OnKeyPress
 {
-	if (Shiori.Reference[0] == "f1")
-	{
-		return "\![open,readme]";
-	}
-	else if (Shiori.Reference[0] == "t")
-	{
-		return OnAiTalk;
-	}
-	else if (Shiori.Reference[0] == "r")
-	{
-		return OnLastTalk;
-	}
+	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
+	else if (Shiori.Reference[0] == "t") return OnAiTalk;
+	else if (Shiori.Reference[0] == "r") return OnLastTalk;
 }
 
 function OnSurfaceRestore
@@ -141,15 +129,9 @@ function OnSecondChange
 function BalloonIsOpen
 {
 	local shioristatus = Shiori.Headers.Status.ToString();
-	local found = !shioristatus.IndexOf("balloon").IsNull();
-	if (found)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	
+	if (shioristatus.Contains("balloon")) return 1;
+	else return 0;
 }
 
 function OnWindowStateRestore
@@ -175,16 +157,11 @@ function FormatLinks(links)
 	local output = "";
 	for (i = 0; i < links.length; i++)
 	{
-		output += links[i];
+		output += links[i]; //Add the link/title
 		//Alternate between adding  or 
-		if (i % 2 == 1)
-		{
-			output += (2).ToAscii();
-		}
-		else
-		{
-			output += (1).ToAscii();
-		}
+		if (i % 2 == 1) output += (2).ToAscii();
+		else output += (1).ToAscii();
+		
 	}
 	return output;
 }
@@ -204,14 +181,8 @@ function recommendsites_sakura
 
 function br
 {
-	if (CurrentBalloonName == "Flip of a Coin")
-	{
-		return "\n";
-	}
-	else
-	{
-		return " ";
-	}
+	if (CurrentBalloonName == "Flip of a Coin") return "\n";
+	else return " ";
 }
 
 //This is simplified compared to the YAYA version of this ghost. Because of how I had to do word groups differently, I can't perfectly replicate that code... so I'm just going to leave it in this simple form. It's just a debug thing anyways.

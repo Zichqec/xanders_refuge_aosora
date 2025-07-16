@@ -37,30 +37,12 @@ function OnInstallFailure
 {
 	local reason = Shiori.Reference[0];
 	
-	if (Shiori.Reference[0] == "unlha32")
-	{
-		reason = "could not load the dll to decompress lzh files";
-	}
-	else if (Shiori.Reference[0] == "extraction")
-	{
-		reason = "failed to decompress the file";
-	}
-	else if (Shiori.Reference[0] == "invalid type")
-	{
-		reason = "the install.txt is incorrect";
-	}
-	else if (Shiori.Reference[0] == "unsupported")
-	{
-		reason = "the archive is not supported";
-	}
-	else if (Shiori.Reference[0] == "password")
-	{
-		reason = "incorrect password";
-	}
-	else if (Shiori.Reference[0] == "artificial")
-	{
-		reason = "canceled by user";
-	}
+	if (Shiori.Reference[0] == "unlha32") reason = "could not load the dll to decompress lzh files";
+	else if (Shiori.Reference[0] == "extraction") reason = "failed to decompress the file";
+	else if (Shiori.Reference[0] == "invalid type") reason = "the install.txt is incorrect";
+	else if (Shiori.Reference[0] == "unsupported") reason = "the archive is not supported";
+	else if (Shiori.Reference[0] == "password") reason = "incorrect password";
+	else if (Shiori.Reference[0] == "artificial") reason = "canceled by user";
 	
 	return "\0\i[10]Could not complete installation: {reason}.";
 }
@@ -94,19 +76,11 @@ function OnUpdateBegin
 //reference0 is the number of new files, starting from 0
 function OnUpdateReady
 {
-	//Number of files starts from 0, so this displays the correct amount
-	local newfiles = Shiori.Reference[0];
-	newfiles = newfiles.ToNumber();
-	newfiles += 1;
+	local newfiles = Shiori.Reference[0].ToNumber() + 1; //Number of files starts from 0, so this displays the correct amount
 	
 	//plural checks, adds an s and changes is to are if there's more than 1 file
-	local s = "";
-	local are = "is";
-	if (newfiles != 1)
-	{
-		s = "s";
-		are = "are";
-	}
+	local s = ""; local are = "is";
+	if (newfiles != 1) { s = "s"; are = "are"; }
 	
 	return "\0\i[10]There {are} {newfiles} new file{s}.\w8";
 }
@@ -129,18 +103,9 @@ function OnUpdateFailure
 {
 	local reason = Shiori.Reference[0];
 	
-	if (Shiori.Reference[0] == "timeout")
-	{
-		reason = "connection timed out";
-	}
-	else if (Shiori.Reference[0] == "md5 miss")
-	{
-		reason = "MD5 error on file {Shiori.Reference[1]}\n\nPlease contact the ghost author for assistance";
-	}
-	else if (Shiori.Reference[0] == "artificial")
-	{
-		reason = "canceled by user";
-	}
+	if (Shiori.Reference[0] == "timeout") reason = "connection timed out";
+	else if (Shiori.Reference[0] == "md5 miss") reason = "MD5 error on file {Shiori.Reference[1]}\n\nPlease contact the ghost author for assistance";
+	else if (Shiori.Reference[0] == "artificial") reason = "canceled by user";
 	
 	return "\0\i[10]Could not update: {reason}.";
 }
@@ -154,10 +119,7 @@ function OnSNTPCompare
 	if (Shiori.Reference[3] != 0)
 	{
 		local s = "";
-		if (Shiori.Reference[3] != 1)
-		{
-			s = "s";
-		}
+		if (Shiori.Reference[3] != 1) s = "s";
 		
 		output += "\0\i[10]The clock is off by {Shiori.Reference[3]} second{s}.\n\n";
 		
@@ -189,22 +151,10 @@ function OnBIFFFailure
 {
 	local reason = Shiori.Reference[0];
 	
-	if (Shiori.Reference[0] == "timeout")
-	{
-		reason = "connection timed out";
-	}
-	else if (Shiori.Reference[0] == "kick")
-	{
-		reason = "can't access account";
-	}
-	else if (Shiori.Reference[0] == "defect")
-	{
-		reason = "POP settings incorrect";
-	}
-	else if (Shiori.Reference[0] == "artificial")
-	{
-		reason = "canceled by user";
-	}
+	if (Shiori.Reference[0] == "timeout") reason = "connection timed out";
+	else if (Shiori.Reference[0] == "kick") reason = "can't access account";
+	else if (Shiori.Reference[0] == "defect") reason = "POP settings incorrect";
+	else if (Shiori.Reference[0] == "artificial") reason = "canceled by user";
 
 	return "\0\i[10]Could not get emails: {reason}.";
 }
@@ -217,14 +167,8 @@ function OnHeadlinesenseFailure
 {
 	local reason = Shiori.Reference[0];
 	
-	if (Shiori.Reference[0] == "can't download")
-	{
-		reason = "can't download the file";
-	}
-	else if (Shiori.Reference[0] == "can't analyze")
-	{
-		reason = "can't analyze the file";
-	}
+	if (Shiori.Reference[0] == "can't download") reason = "can't download the file";
+	else if (Shiori.Reference[0] == "can't analyze") reason = "can't analyze the file";
 
 	return "\0\i[10]Could not get RSS: {reason}.";
 }

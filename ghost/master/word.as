@@ -1,12 +1,9 @@
 function smoke(arg)
 {
 	surface = 0;
-	if (!arg.IsNull())
-	{
-		surface = arg;
-	}
+	if (!arg.IsNull()) surface = arg;
 	
-	output = "";
+	local output = "";
 	output += "\s[12]\_w[1500]";
 	output += "\s[{surface}13]\_w[2000]";
 	output += "\s[{surface}14]\i[50,wait]\_w[500]\s[{surface}13]";

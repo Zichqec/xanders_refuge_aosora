@@ -46,15 +46,9 @@ function SakuraMenuGreetings
 		basegreetings.Add("Can't a deity from aeons past smoke in peace?");
 	}
 	
-	if (MenuPoses.length == 0)
-	{
-		MenuPoses = baseposes;
-	}
+	if (MenuPoses.length == 0) MenuPoses = baseposes;
 	
-	if (MenuGreetings.length == 0)
-	{
-		MenuGreetings = basegreetings;
-	}
+	if (MenuGreetings.length == 0) MenuGreetings = basegreetings;
 	
 	local output = "";
 	
@@ -74,34 +68,19 @@ function OnSakuraMenu
 	local output = "";
 	
 	local isinitial = 0;
-	if (Shiori.Headers.ID == "OnMouseDoubleClick")
-	{
-		isinitial = 1;
-	}
+	if (Shiori.Headers.ID == "OnMouseDoubleClick") isinitial = 1;
 	
-	if (!isinitial)
-	{
-		output += "\C\![lock,balloonrepaint]\c";
-	}
+	if (!isinitial) output += "\C\![lock,balloonrepaint]\c";
 	output += "\0\![set,autoscroll,disable]";
 	
 	local greet = "";
-	if (isinitial)
-	{
-		greet = SakuraMenuGreetings();
-	}
-	else if (!Shiori.Reference[0].IsNull())
-	{
-		greet = Shiori.Reference[0];
-	}
+	if (isinitial) greet = SakuraMenuGreetings();
+	else if (!Shiori.Reference[0].IsNull()) greet = Shiori.Reference[0];
 	
 	output += "\n\n\n\![quicksection,true]\![no-autopause]";
 	
 	output += "\![*]\q[Talk to me,OnAiTalk]";
-	if (!LastTalk == "")
-	{
-		output += "  \![*]\q[Say that again,OnLastTalk]";
-	}
+	if (!LastTalk == "") output += "  \![*]\q[Say that again,OnLastTalk]";
 	output += "\n";
 	
 	output += "\![*]{StoryQuestion()}";

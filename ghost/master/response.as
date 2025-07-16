@@ -31,9 +31,7 @@ function OnAskGods
 
 talk OnAskGods_Aion
 {
-	%{
-		Save.Data.KnowAion = 1;
-	}
+	%{ Save.Data.KnowAion = 1; }
 	\s[222]Aion is the god of fate. They're the ultimate authority on everything, even the gods. \s[213]Absolutely nothing escapes their grasp. 
 	
 	\s[0]Despite that, they tend to stay out of our quibbles. \s[111]After all, why bother to fight when things will go your way regardless? 
@@ -45,9 +43,7 @@ talk OnAskGods_Aion
 
 talk OnAskGods_Dueyar
 {
-	%{
-		Save.Data.KnowDueyar = 1;
-	}
+	%{ Save.Data.KnowDueyar = 1; }
 	\s[220]Dueyar is the god of justice and order, and I suppose you could call her my sister. \s[221]It's a little more complicated than that, but I wouldn't expect a mortal to understand. 
 	
 	{smoke(2)}\s[211]We have... \s[200]some disagreements. \s[220]She rather likes for fate's plans to go exactly as prescribed, \s[121]and I do not. 
@@ -144,9 +140,7 @@ talk OnAskGods_Vismir
 
 talk OnAskGods_Sajun
 {
-	%{
-		Save.Data.KnowSajun = 1;
-	}
+	%{ Save.Data.KnowSajun = 1; }
 	\s[111]Sajun is one half of the god of joy. \s[11]He and his "brother" @Malous used to be a singular being, \w4\s[200]but they were deemed too powerful and were split in two. \s[211]Together they could give and take joy at will, but alone, Sajun can only give joy. 
 	
 	\s[231]I know "god that gives joy" sounds nice on the surface, but a fragile mortal such as yourself should avoid him at all costs. \s[111]His{br}"joy" primarily comes from watching others suffer.
@@ -154,9 +148,7 @@ talk OnAskGods_Sajun
 
 talk OnAskGods_Malous
 {
-	%{
-		Save.Data.KnowMalous = 1;
-	}
+	%{ Save.Data.KnowMalous = 1; }
 	\s[111]Malous is one half of the god of joy. \s[11]He and his "brother" @Sajun used to be a singular being, \w4\s[200]but they were deemed too powerful and were split in two. \s[211]Together they could give and take joy at will, but alone, Malous can only take joy. 
 	
 	\s[130]I know "god that takes joy" sounds terrible on the surface, but he's generally very reasonable, and makes good company. \s[11]He'd do anything for his brother though, so he's still best avoided by mortals.

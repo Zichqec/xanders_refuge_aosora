@@ -101,34 +101,13 @@ function OnSpectrePlugin@ConfirmCalibration
 
 function OnSpectrePlugin@Surface
 {
-	if (Shiori.Reference[0] == "normal")
-	{
-		return "\s[11]";
-	}
-	else if (Shiori.Reference[0] == "surprised")
-	{
-		return "\s[30]";
-	}
-	else if (Shiori.Reference[0] == "anxious")
-	{
-		return "\s[22]";
-	}
-	else if (Shiori.Reference[0] == "discouraged")
-	{
-		return "\s[13]";
-	}
-	else if (Shiori.Reference[0] == "angry")
-	{
-		return "\s[21]";
-	}
-	else if (Shiori.Reference[0] == "thinking")
-	{
-		return "\s[222]";
-	}
-	else if (Shiori.Reference[0] == "unamused")
-	{
-		return "\s[220]";
-	}
+	if (Shiori.Reference[0] == "normal") return "\s[11]";
+	else if (Shiori.Reference[0] == "surprised") return "\s[30]";
+	else if (Shiori.Reference[0] == "anxious") return "\s[22]";
+	else if (Shiori.Reference[0] == "discouraged") return "\s[13]";
+	else if (Shiori.Reference[0] == "angry") return "\s[21]";
+	else if (Shiori.Reference[0] == "thinking") return "\s[222]";
+	else if (Shiori.Reference[0] == "unamused") return "\s[220]";
 }
 
 function OnSpectrePlugin@Possession

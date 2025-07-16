@@ -20,9 +20,7 @@ talk OnFirstBootEnd_Fair
 
 talk OnFirstBootEnd_Who
 {
-	%{
-		Save.Data.AskedGods = 2;
-	}
+	%{ Save.Data.AskedGods = 2; }
 	\s[130]You don't know Xaeyar, master of all things chance? \s[220]Praised at unlikely victories, and cursed at every misfortune? \s[211]God of luck since aeons past? 
 	
 	... \w8\w8\w8\s[231]What rock have you been living under?\w8\w8\w8
