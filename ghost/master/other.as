@@ -181,7 +181,7 @@ function recommendsites_sakura
 
 function br
 {
-	if (CurrentBalloonName == "Flip of a Coin") return "\n";
+	if (CurrentBalloonName == "Flip of a Coin") return " \c[char,1]\n";
 	else return " ";
 }
 

@@ -42,7 +42,7 @@ talk RandomTalk
 {
 	\s[0]I read mortal books sometimes. \s[111]Of all kinds. \s[0]It's interesting to see what your kind deems important in your finite lives.\w8\w8
 	
-	\s[200]I can't say I truly understand it, though.\w8\w8{br}\s[130]It's not really possible for me to fully grasp a mortal perspective, after all.
+	\s[200]I can't say I truly understand it, though.{br}\s[130]It's not really possible for me to fully grasp a mortal perspective, after all.
 }
 
 talk RandomTalk
@@ -372,7 +372,7 @@ talk RandomTalk
 {
 	\s[22]I worry for @Nevris at times. \s[122]She says she's doing well, \w4\s[222]but she never gets time to rest. 
 	
-	{smoke}\s[0]There's not really anything I can do for her though, she controls her domain very tightly and won't let anyone else interfere.\w8\w8{br}\s[13]That's going to bite her one of these days.
+	{smoke}\s[0]There's not really anything I can do for her though, she controls her domain very tightly and won't let anyone else interfere.{br}\s[13]That's going to bite her one of these days.
 }
 
 talk RandomTalk
@@ -465,7 +465,7 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[0]@Tysus focuses a lot on keeping the quality of you mortals' lives up until fate comes calling. \s[11]All too often his influence is pushed to the side, though. \s[111]Mortals make themselves suffer by neglecting his advice,\w4{br}\s[13]and then all too often they come to him{br}\f[italic,1]after\f[italic,default] the damage has been done. 
+	\s[0]@Tysus focuses a lot on keeping the quality of you mortals' lives up until fate comes calling. \s[11]All too often his influence is pushed to the side, though. \s[111]Mortals make themselves suffer by neglecting his advice,{br}\s[13]and then all too often they come to him{br}\f[italic,1]after\f[italic,default] the damage has been done. 
 	
 	{smoke(2)}\s[200]Can't say I'm any better, really, but I'd hate to have his domain. It seems frustrating.
 }
@@ -479,7 +479,7 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[0]I've never seen @Iella so mad as the day she had some expensive wines being shipped in, and the cart they were being transported on went tumbling down a hill,\w4{br}smashing all of the bottles in the process. \s[11]She couldn't even punish the mortal for{br}"carelessness", he died in the accident. 
+	\s[0]I've never seen @Iella so mad as the day she had some expensive wines being shipped in, and the cart they were being transported on went tumbling down a hill,{br}smashing all of the bottles in the process. \s[11]She couldn't even punish the mortal for{br}"carelessness", he died in the accident. 
 	
 	\s[230]Yes it was my doing. \s[231]You have no idea how incredibly obnoxious it was every time she went on about that shipment. \s[200]She doesn't blather on about her plans around me anymore.
 }
@@ -493,9 +493,9 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[11]People are always trying to find things that I like in order to gain my favor. \s[0]Some of them are correct; I do indeed like clover, and the four-leafed variety are always nice to see. \s[100]Ladybugs are good too;\w8{br}my favorite of the insects if I had to pick one. 
+	\s[11]People are always trying to find things that I like in order to gain my favor. \s[0]Some of them are correct; I do indeed like clover, and the four-leafed variety are always nice to see. \s[100]Ladybugs are good too;{br}my favorite of the insects if I had to pick one. 
 	
-	\s[231]But you know what nobody ever thinks of?\w8{br}Lighting. Use a reasonable amount of lighting in your homes and my temples, and make sure the colors are good for the room. 
+	\s[231]But you know what nobody ever thinks of?{br}Lighting. Use a reasonable amount of lighting in your homes and my temples, and make sure the colors are good for the room. 
 	
 	{smoke(2)}\s[200]I don't see why they don't pick up on this more easily, the correlation is obvious.
 }
@@ -575,7 +575,7 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[0]Sometimes mortals underestimate @Tohmjir.\w8{br}\s[11]They associate him with feasting and drinking, and think his role is largely one of luxury and excess. 
+	\s[0]Sometimes mortals underestimate @Tohmjir.{br}\s[11]They associate him with feasting and drinking, and think his role is largely one of luxury and excess. 
 	
 	\s[200]They could not be further from the truth;\w8 his domain is quite wide. \s[130]For example, consider the seasons. Growth in the spring, and decay in the fall. \s[30]Mortal life wouldn't be possible without his influence to grow their crops and give the soil rest. 
 	
@@ -596,7 +596,7 @@ talk RandomTalk
 {
 	\s[11]I would try to explain the realm of the gods to you, but it's rather beyond mortal comprehension. \s[130]There aren't words in your language for me to communicate it meaningfully, \s[30]and any mortals who have glimpsed the divine are forever changed. 
 	
-	\s[0]They often end up trying to express their experience to other mortals around them,\w4{br}but it's utterly impossible to communicate,\w4{br}and they end up being shunned for their unhinged ramblings. 
+	\s[0]They often end up trying to express their experience to other mortals around them,{br}but it's utterly impossible to communicate,{br}and they end up being shunned for their unhinged ramblings. 
 	
 	{smoke}\s[0]It's better for you to remain in the comfortable bubble of your mortality.
 }

@@ -53,7 +53,7 @@ talk OnAskGods_Dueyar
 
 talk OnAskGods_Xaeyar
 {
-	\s[11]That's me. \s[111]God of luck, if you've forgotten.\w8\w8{br}{XaeyarDescript}
+	\s[11]That's me. \s[111]God of luck, if you've forgotten.{br}{XaeyarDescript}
 }
 
 talk OnAskGods_Iella
@@ -108,7 +108,7 @@ talk OnAskGods_Meiyr
 //br here made it not pause, so it gets a manual pause...
 talk OnAskGods_Tohmjir
 {
-	\s[11]Tohmjir is the god of growth and decay. \s[111]I imagine that sounds scary to a mortal, but he's one of the least scary gods you could meet. \s[31]The man just wants to grow plants and watch over decomposing skulls,\w4{br}how can he be faulted for that? 
+	\s[11]Tohmjir is the god of growth and decay. \s[111]I imagine that sounds scary to a mortal, but he's one of the least scary gods you could meet. \s[31]The man just wants to grow plants and watch over decomposing skulls,{br}how can he be faulted for that? 
 	
 	\s[0]Well, that's not entirely true. \s[11]He also wants good food and drink, which I think is why his domain has to do with growth in the first place. \s[200]He always seems content, so maybe he's onto something.
 }
@@ -122,7 +122,7 @@ talk OnAskGods_Nemara
 
 talk OnAskGods_Thaelia
 {
-	\s[0]Thaelia is the god of balance. \s[131]That's what she calls herself, anyways, but it's a bit of a misnomer. \s[30]Balance in a vestibular sense,\w4{br}not as in managing the forces of good and evil. \s[100]Although, it's actually a wider domain than even that; she covers all sorts of so-called 6th senses, and subconscious processes. 
+	\s[0]Thaelia is the god of balance. \s[131]That's what she calls herself, anyways, but it's a bit of a misnomer. \s[30]Balance in a vestibular sense,{br}not as in managing the forces of good and evil. \s[100]Although, it's actually a wider domain than even that; she covers all sorts of so-called 6th senses, and subconscious processes. 
 	
 	\s[230]You ever look at a person and immediately know they're bad news? \s[130]That's her. That gut feeling. 
 	
@@ -214,7 +214,7 @@ talk XaeyarDescript
 {
 	\s[11]I influence just about everything in some fashion, even if only in subtle ways. \s[200]Not everyone is a fan. I tend to ruin meticulously made plans. 
 	
-	\s[230]I add some color and interest to the world,\w4{br}where otherwise it would be drab and predictable.
+	\s[230]I add some color and interest to the world,{br}where otherwise it would be drab and predictable.
 }
 
 function OnStory
@@ -248,11 +248,11 @@ talk OnStory@UpsetDueyar
 	
 	\s[230]You should have seen the storm that followed. \s[130]@Dueyar flew into a rage, and we haven't had a normal conversation since. \s[200]She's still enraged any time she sets sight on me. 
 	
-	\s[220]They caught him again not that long later;\w8{br}fate had already decided that it was his time, so I'm not sure what harm a little bump in the road really caused there. \s[221]If anything, I'm keeping them from becoming too complacent. \x\0\n[-200]
+	\s[220]They caught him again not that long later;{br}fate had already decided that it was his time, so I'm not sure what harm a little bump in the road really caused there. \s[221]If anything, I'm keeping them from becoming too complacent. \x\0\n[-200]
 	
 	{smoke(2)}\s[213]Anyways, I figured literally anything was more productive than being yelled at all the time, and maybe some time apart will let her cool down. 
 	
-	\s[0]So here I am, spending my free time in a cave for probably the next century or two.\w8\w8{br}\s[11]Talking to a mortal, apparently.\![raise,OnIncrementStory,2]
+	\s[0]So here I am, spending my free time in a cave for probably the next century or two.{br}\s[11]Talking to a mortal, apparently.\![raise,OnIncrementStory,2]
 }
 
 talk OnStory@ProblemWithFate

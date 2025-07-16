@@ -20,7 +20,7 @@ talk OnNeedlePoke
 
 talk OnNeedlePoke
 {
-	\s[111]You do realize that I'm a god and your mortal weapons will have no effect on me,\w4{br}correct?
+	\s[111]You do realize that I'm a god and your mortal weapons will have no effect on me,{br}correct?
 }
 
 talk OnNeedlePoke
