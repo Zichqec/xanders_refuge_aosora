@@ -11,7 +11,7 @@ function OnInstallComplete
 	output += "\0\i[10]Installed {Shiori.Reference[1]} ({Shiori.Reference[0]}).";
 	
 	//A little menu to open or change to the ghost that was installed immediately
-	if (!Shiori.Reference[0].IndexOf("ghost").IsNull())
+	if (Shiori.Reference[0].Contains("ghost"))
 	{
 		output += "\n\n\_q";
 		output += "\![*]\__q[OnInstallComplete@Action,call]Call {Shiori.Reference[1]}\__q  \![*]\__q[OnInstallComplete@Action,change]Change to {Shiori.Reference[1]}\__q\n\n";
