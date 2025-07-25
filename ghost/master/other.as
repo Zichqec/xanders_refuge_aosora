@@ -155,7 +155,7 @@ function ghostver
 {
 	//Equivalent version in YAYA plus incrementer for the port
 	//It means "aosora" not "alpha"...
-	return "1.0.3-a01";
+	return "1.0.4-a01";
 }
 
 //—————————————————————————————— Right click menu links ——————————————————————————————
