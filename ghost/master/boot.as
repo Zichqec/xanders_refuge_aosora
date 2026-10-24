@@ -72,7 +72,7 @@ talk BootTalk
 {
 	\s[11]Mm? \s[111]Oh, hey. \s[22]I was just thinking I might head out. 
 	
-	{smoke}\s[13]Ah, what the hell, a few more hours won't{br}kill 'em.
+	{smoke}\s[13]Ah, what the hell, a few more hours won't kill 'em.
 }
 
 talk BootTalk
